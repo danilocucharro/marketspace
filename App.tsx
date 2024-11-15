@@ -6,6 +6,7 @@ import { SignIn } from '@/screens/SignIn';
 import { StatusBar, Text } from 'react-native';
 import theme from './src/theme';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SignUp } from '@/screens/SignUp';
 
 export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
@@ -18,7 +19,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <SignIn /> : <Text>As fontes nao carregaram</Text>}
+        {fontsLoaded ? <SignUp /> : <Text>As fontes nao carregaram</Text>}
       </SafeAreaProvider>
     </ThemeProvider>
   );

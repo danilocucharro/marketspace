@@ -6,7 +6,7 @@ import { Button } from "@/components/Button";
 
 export function SignIn() {
   return(
-    <Container>
+    <Container >
       <SignInContent>
         <IntroContainer>
           <Logo source={logoImg} alt="logo marketspace" />
