@@ -9,9 +9,9 @@ type ButtonProps = TouchableOpacityProps &{
   variant: ButtonVariantStyleProps
 }
 
-export function Button({ children, title, variant }: ButtonProps) {
+export function Button({ children, title, variant, ...rest }: ButtonProps) {
   return(
-    <Container variant={variant}>
+    <Container variant={variant} {...rest}>
       {children}
       <Title variant={variant}>{title}</Title>
     </Container>

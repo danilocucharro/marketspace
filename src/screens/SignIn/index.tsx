@@ -1,12 +1,22 @@
-import { Input } from "@/components/Input";
 import { Container, Form, FormTitle, Intro, IntroContainer, Logo, NewAccountContent, NewAccountTitle, SignInContent, SubTitle, Title } from "./styles";
 
-import logoImg from "@/assets/logo.png";
+import { useNavigation } from "@react-navigation/native";
+
 import { Button } from "@/components/Button";
+import { Input } from "@/components/Input";
+
+import logoImg from "@/assets/logo.png";
+import { AuthNavigatorRoutesProps } from "@/routes/auth.routes";
 
 export function SignIn() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+  function handleCreateNewAccount() {
+    navigation.navigate("signUp")
+  }
+
   return(
-    <Container >
+    <Container>
       <SignInContent>
         <IntroContainer>
           <Logo source={logoImg} alt="logo marketspace" />
@@ -40,6 +50,7 @@ export function SignIn() {
         <Button 
           title="Criar uma conta"
           variant="GRAY"
+          onPress={handleCreateNewAccount}
         />
       </NewAccountContent>
     </Container>

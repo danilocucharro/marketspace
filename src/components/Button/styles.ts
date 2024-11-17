@@ -8,8 +8,9 @@ type ButtonStyleProps = {
 }
 
 export const Container = styled(TouchableOpacity)<ButtonStyleProps>`
+  flex-direction: row;
   width: 100%;
-  height: 42px;
+  height: 45px;
   padding: 12px;
   gap: 8px;
 

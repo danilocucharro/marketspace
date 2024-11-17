@@ -1,12 +1,24 @@
-import { UserPhoto } from "@/components/UserPhoto";
+import { useNavigation } from "@react-navigation/native";
+
 import { AlreadyHaveAccountContent, AlreadyHaveAccountTitle, Container, EditPhotoButton, Form, IntroContainer, IntroSubTitle, IntroTitle, Logo } from "./styles";
 
-import logoImg from "@/assets/logo.png"
-import { PencilSimpleLine } from "phosphor-react-native";
+import { UserPhoto } from "@/components/UserPhoto";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 
+import { AuthNavigatorRoutesProps } from "@/routes/auth.routes";
+
+import { PencilSimpleLine } from "phosphor-react-native";
+
+import logoImg from "@/assets/logo.png"
+
 export function SignUp() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+  function handleBackToSignIn(){
+    navigation.navigate("signIn")
+  }
+
   return(
     <Container>
       <IntroContainer>
@@ -61,6 +73,7 @@ export function SignUp() {
         <Button 
           title="Ir para o login"
           variant="GRAY"
+          onPress={handleBackToSignIn}
         />
       </AlreadyHaveAccountContent>
     </Container>
