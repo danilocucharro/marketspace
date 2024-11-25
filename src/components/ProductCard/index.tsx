@@ -6,16 +6,16 @@ import { UserPhoto } from "../UserPhoto";
 import ShoesImg from "@/assets/shoes.png"
 
 type ProductCardProps = TouchableOpacityProps &{
-  photo: string;
-  name: string;
-  price: string;
-  infoStatus: ProductCardVariantStyleProps;
+  photo?: string;
+  name?: string;
+  price?: string;
+  infoStatus?: ProductCardVariantStyleProps;
   userPhoto?: string;
 }
 
-export function ProductCard() {
+export function ProductCard({...rest}: ProductCardProps) {
   return(
-    <Container>
+    <Container {...rest}>
       <ProductInfoContainer>
         <UserPhoto variant="WHITE" style={{borderWidth: 1, width: 24, height: 24}}/>
 

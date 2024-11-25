@@ -6,7 +6,12 @@ import { MagnifyingGlass, Sliders } from "phosphor-react-native";
 import { TouchableOpacity } from "react-native";
 import { useTheme } from "styled-components/native";
 
-export function SearchInput() {
+type SearchInputProps = {
+  onPressFilter: () => void;
+  onPressSearch: () => void;
+}
+
+export function SearchInput({ onPressFilter, onPressSearch }: SearchInputProps) {
   const { COLORS } = useTheme()
 
   return(
@@ -20,13 +25,13 @@ export function SearchInput() {
         placeholder="Buscar anúncio"
       />
       <SearchButtonContent>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressSearch}>
           <MagnifyingGlass color={COLORS.GRAY_200} size={20} />
         </TouchableOpacity>
 
         <Divider />
         
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressFilter}>
           <Sliders color={COLORS.GRAY_200} size={20} />
         </TouchableOpacity>
       </SearchButtonContent>
